@@ -6,10 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "tick": "node scripts/cron-tick.mjs society",
+    "tick:force": "node scripts/cron-tick.mjs society --force",
+    "tick:conversation": "node scripts/cron-tick.mjs conversation",
+    "tick:conversation:force": "node scripts/cron-tick.mjs conversation --force",
+    "tick:watch": "node scripts/tick-watch.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.105.4",
     "next": "16.2.6",
+    "openai": "^6.38.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
