@@ -33,7 +33,15 @@ const path =
   kind === "conversation"
     ? "/api/cron/conversation-tick"
     : "/api/cron/society-tick";
-const url = new URL(path, "http://localhost:3000");
+function siteBase() {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
+  const vercel = process.env.VERCEL_URL;
+  if (vercel) return `https://${vercel}`;
+  return "http://localhost:3000";
+}
+
+const url = new URL(path, siteBase());
 if (force) url.searchParams.set("force", "1");
 
 const secret = loadCronSecret();

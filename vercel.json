@@ -1,12 +1,1 @@
-{
-  "crons": [
-    {
-      "path": "/api/cron/society-tick",
-      "schedule": "*/25 * * * *"
-    },
-    {
-      "path": "/api/cron/conversation-tick",
-      "schedule": "*/5 * * * *"
-    }
-  ]
-}
+{}
